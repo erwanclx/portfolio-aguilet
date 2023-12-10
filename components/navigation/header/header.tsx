@@ -143,7 +143,7 @@ export default function Header() {
 
             </nav>
 
-            <div className='hidden_menu absolute -top-full left-0 w-full h-auto bg-white'>
+            <div className='hidden_menu absolute -top-full left-0 w-full h-auto bg-white z-10'>
                 <ul className='w-full h-auto flex flex-col pt-12 items-center border-b-[1px] border-black
                 '>
                 {menu.map((item, index) => {
