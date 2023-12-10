@@ -150,7 +150,7 @@ export default function Header() {
                         if(item.subMenu) {
                             return (
                                 <>
-                                    <li key={index} ref={SubmenuRef} className='navbar_mobile_links relative text-2xl px-5 opacity-0 border-b-[1px] border-gray w-full h-14 flex items-center justify-between cursor-pointer'><span onClick={() => {setIsSubMenuOpen(!isSubMenuOpen)}} >{item.name}</span><ChevronBottom/></li>
+                                    <li key={index} ref={SubmenuRef} className='navbar_mobile_links relative text-2xl px-5 opacity-0 border-b-[1px] border-gray w-full h-14 flex items-center justify-between cursor-pointer'><button onClick={() => {setIsSubMenuOpen(!isSubMenuOpen)}} >{item.name}</button><ChevronBottom/></li>
                                     {
                                         item.subMenu.map((item, index) => {
                                             return (
