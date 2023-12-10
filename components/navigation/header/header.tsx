@@ -97,7 +97,7 @@ export default function Header() {
         <header>
             <nav>
                 <ul className="w-full h-12 px-4 flex items-center justify-between absolute z-50 bg-white
-                md:min-h-fit md:h-fit
+                md:min-h-fit md:h-fit md:px-10
                 ">
                     <li>
                         <Image alt='Logo Arthur Guilet' width={100} height={100}
