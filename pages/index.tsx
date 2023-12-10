@@ -3,6 +3,7 @@ import Header from '@/components/navigation/header/header'
 import Hero from '@/components/hero/hero'
 import TwoLayout from '@/components/section/two-layout'
 import Carousel from '@/components/section/carousel'
+import Bento from '@/components/section/bento'
 import Title from '@/components/text/title'
 import { PrimaryButton, PrimaryLink } from '@/components/button/button'
 
@@ -37,6 +38,7 @@ export default function Home() {
       <Hero />
       <TwoLayout />
       <Carousel />
+      <Bento />
     </>
   )
 }
