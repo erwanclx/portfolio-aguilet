@@ -85,3 +85,12 @@ html {
   background: #00C9FF;
   transition: width 0.3s ease-in-out;
 }
+
+.mobile_presta_wrap {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.mobile_presta_wrap::-webkit-scrollbar {
+  display: none;
+}

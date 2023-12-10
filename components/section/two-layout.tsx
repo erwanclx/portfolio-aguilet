@@ -7,10 +7,10 @@ export default function TwoLayout() {
     return (
         <Section id="main" className="
         flex 
-        flex-col-reverse justify-evenly px-4
+        flex-col-reverse justify-evenly
         md:flex-row
-        md:gap-10 md:py-12 md:px-24
-        lg:gap-40 lg:py-20 lg:px-32">
+        md:gap-10
+        lg:gap-40">
           
             <div className='left h-1/2 md:h-auto '>
               <Image className='

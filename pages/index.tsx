@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Header from '@/components/navigation/header/header'
 import Hero from '@/components/hero/hero'
 import TwoLayout from '@/components/section/two-layout'
+import Carousel from '@/components/section/carousel'
 import Title from '@/components/text/title'
 import { PrimaryButton, PrimaryLink } from '@/components/button/button'
 
@@ -35,6 +36,7 @@ export default function Home() {
       <Header />
       <Hero />
       <TwoLayout />
+      <Carousel />
     </>
   )
 }
