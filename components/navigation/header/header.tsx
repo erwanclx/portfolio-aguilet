@@ -98,9 +98,11 @@ export default function Header() {
                 md:min-h-fit md:h-fit md:px-10
                 ">
                     <li>
-                        <Image alt='Logo Arthur Guilet' width={100} height={100}
-                        className="w-8 md:w-20 md:py-2"
-                        src="/logo.png"/>
+                        <Link href='/'>
+                            <Image alt='Logo Arthur Guilet' width={100} height={100}
+                            className="w-8 md:w-20 md:py-2"
+                            src="/logo.png"/>
+                        </Link>
                     </li>
                     
                     <li className='hamburger flex flex-col h-5 justify-around md:hidden' onClick={handleMenu}>
