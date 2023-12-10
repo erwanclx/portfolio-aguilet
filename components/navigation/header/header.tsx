@@ -56,8 +56,9 @@ export default function Header() {
             })
         }
     }
-    
+    let test = 0
     useEffect(() => {
+        console.log('test', test)
         const submenu = document.querySelector('.submenu')
         const submenu_mobile = document.querySelectorAll('.submenu_mobile')
         const chevron = document.querySelector('#ChevronBottom')
@@ -88,11 +89,12 @@ export default function Header() {
                 }})
             
         }
+        test++
     }
-    , [isSubMenuOpen])
+    , [isSubMenuOpen, test])
 
     return (
-        <header>
+        <header ref={SubmenuRef}>
             <nav>
                 <ul className="w-full h-12 px-4 flex items-center justify-between absolute z-50 bg-white
                 md:min-h-fit md:h-fit md:px-10
