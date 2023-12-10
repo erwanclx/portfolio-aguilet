@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 
 function PrimaryButton(props: any) {
 
-    const btnRef = useRef(null)
+    const btnRef: any = useRef(null) 
     const [isHovered, setIsHovered] = useState(false);
 
     useEffect(() => {
@@ -58,7 +58,7 @@ function SecondaryButton(props: any) {
 
 function PrimaryLink(props: any) {
 
-  const btnRef = useRef(null)
+  const btnRef: any = useRef(null)
   const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
