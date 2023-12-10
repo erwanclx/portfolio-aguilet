@@ -20,7 +20,7 @@ export default function Header() {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isSubMenuOpen, setIsSubMenuOpen] = useState(false)
-    const SubmenuRef = useRef()
+    const SubmenuRef = useRef(null)
     useClickOutside(SubmenuRef, () => setIsSubMenuOpen(false))
 
     function handleMenu() {
