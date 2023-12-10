@@ -42,7 +42,7 @@ export default function BentoSection() {
     }), []
 
     return (
-        <Section id="bento" className="flex justify-center gap-8 lg:justify-around flex-col bg-[#0f0f0f]">
+        <Section id="bento" className="flex justify-center gap-8 lg:justify-around flex-col bg-[#0f0f0f] overflow-hidden">
 
         <div className='flex flex-col gap-2 lg:gap-8'>
                 <p className='text-blue-500'>
@@ -64,6 +64,7 @@ export default function BentoSection() {
               {...(i === 4 ? { style: { transform: 'translateX(100px)' } } : '' )}
               {...(i === 5 ? { style: { transform: 'translateY(100px)' } } : '' )}
               {...(i === 6 ? { style: { transform: 'translateX(100px)' } } : '' )}
+              
               className={`row-span-1 rounded-lg border-2 border-slate-400/10 bg-neutral-100 p-1 opacity-0 md:p-10 ${
                 i === 3 || i === 6 ? "col-span-2" : ""
               }`}
