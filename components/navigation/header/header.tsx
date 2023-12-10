@@ -62,8 +62,6 @@ export default function Header() {
         const submenu_mobile = document.querySelectorAll('.submenu_mobile')
         const chevron = document.querySelector('#ChevronBottom')
 
-        console.log(submenu)
-
         if(!isSubMenuOpen) {
             gsap.to(submenu, {duration: 0.5, opacity: 0, onComplete: () => {
                 gsap.to(submenu, {duration: 0.5, display: 'none'})
@@ -154,7 +152,7 @@ export default function Header() {
                                     {
                                         item.subMenu.map((item, index) => {
                                             return (
-                                                <li key={index} className='navbar_mobile_links relative text-2xl px-5 border-b-[1px] border-gray w-full h-14 items-center justify-between cursor-pointer submenu_mobile hidden opacity-0 '><a href={item.link}>{item.name}</a><ChevronRight/></li>
+                                                <li key={index} className='navbar_mobile_links relative text-2xl px-5 border-b-[1px] border-gray w-full h-14 cursor-pointer submenu_mobile hidden opacity-0 '><Link href={item.link} className='w-full h-full flex items-center justify-between'>{item.name} <ChevronRight/> </Link></li>
                                             )
                                         })
                                     }
@@ -163,7 +161,7 @@ export default function Header() {
                             )
                         } else {
                             return (
-                                <li key={index} className='navbar_mobile_links relative text-2xl px-5 opacity-0 border-b-[1px] border-gray w-full h-14 flex items-center justify-between cursor-pointer'><a href={item.link}>{item.name}</a><ChevronRight/></li>
+                                <li key={index} className='navbar_mobile_links relative text-2xl px-5 opacity-0 border-b-[1px] border-gray w-full h-14 cursor-pointer'><Link href={item.link} className='w-full h-full flex items-center justify-between'>{item.name}<ChevronRight/></Link></li>
                             )
                         }
                 })}
