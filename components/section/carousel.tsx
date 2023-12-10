@@ -41,7 +41,8 @@ export default function Carousel() {
             " >
                 {links.map((link, index) => {
                     return (
-                        <Link href={link.link} key={index} className="w-full h-full flex flex-col">
+                        <Link href={link.link} key={index} className="desktop_article w-full h-full flex flex-col">
+                        {/* <Link href={link.link} onMouseEnter={(e) => handleItemScroll(e)} key={index} className="w-full h-full flex flex-col"> */}
                             <Image src={link.image} alt={link.name} width={6000} height={4000} className="w-full min-w-[300px] h-80 object-cover" />
                             <Title type='h4' className='mt-4'>
                                 {link.name}
