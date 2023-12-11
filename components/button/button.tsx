@@ -65,24 +65,12 @@ function PrimaryLink(props: any) {
       if (isHovered) {
           gsap.to(btnRef.current, {
               backgroundImage: 'linear-gradient(90deg, #3b82f6 0%, #00C9FF 100%)',
-              duration: 0.1,
-              onComplete: () => {
-                
-                gsap.to(btnRef.current.children[0], {
-                  right: -30,
-                })
-                
-              }
+              duration: 0.3,
           })
       } else {
-          gsap.to(btnRef.current.children[0], {
-            right: 0,
-            onComplete: () => {
-              gsap.to(btnRef.current, {
-                backgroundImage: 'linear-gradient(90deg, #3b82f6 0%, #3b82f6 100%)',
-                duration: 0.1
-              })
-            }
+          gsap.to(btnRef.current, {
+            backgroundImage: 'linear-gradient(90deg, #3b82f6 0%, #3b82f6 100%)',
+            delay: 0.3,
           })
       }
   }, [isHovered]);
