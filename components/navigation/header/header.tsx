@@ -58,7 +58,6 @@ export default function Header() {
     }
     let test = 0
     useEffect(() => {
-        console.log('test', test)
         const submenu = document.querySelector('.submenu')
         const submenu_mobile = document.querySelectorAll('.submenu_mobile')
         const chevron = document.querySelector('#ChevronBottom')

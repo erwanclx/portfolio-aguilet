@@ -77,11 +77,11 @@ function PrimaryLink(props: any) {
 
 return (
   <>
-    <Link href={props.href} className="
-      btn-primary
-      w-fit py-3 px-7 text-white font-bold relative
-      transition duration-300
-      "
+    <Link href={props.href} 
+      className={
+        "btn-primary w-fit py-3 px-7 text-white font-bold relative transition duration-300 "
+        + (props.className ? props.className : "")
+      }
       style={{backgroundImage: 'linear-gradient(90deg, #3b82f6 0%, #3b82f6 100%)'}}
       ref={btnRef}
       onMouseEnter={() => setIsHovered(true)}
