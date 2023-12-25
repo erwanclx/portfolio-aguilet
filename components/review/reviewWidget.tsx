@@ -8,30 +8,74 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function ReviewWidget() {
 
+    interface Review {
+        rating: {
+            id: number,
+            content: string,
+            rating: number,
+            created_at: string,
+            project: {
+                title: string
+            },
+            rater: {
+                name: string,
+                url: string
+            },
+            url: string
+        }
+    }
+
+    interface inReview {
+            id: number,
+            content: string,
+            rating: number,
+            created_at: string,
+            project: {
+                title: string
+            },
+            rater: {
+                name: string,
+                url: string
+            },
+            url: string
+    }
+
     const reviewWrapper = useRef(null);
     const [count, setCount] = useState(0);
-    const [data, setData] = useState(null);
+    // const [data, setData] = useState(null);
+    const [data, setData] = useState<Review[] | null>(null);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         if(data && count === data.length) {
             const lastCard = document.querySelector(".end-review-item");
             const nextBtn = document.querySelector(".next-review-btn");
-            lastCard.classList.remove("hidden");
+            lastCard?.classList.remove("hidden");
             gsap.to(nextBtn, {opacity: 0, duration: 0.5})
         }
     }, [count, data])
 
     useEffect(() => {
 
-        fetch("https://www.codeur.com/-aguilet/evaluations.json")
-        .then((response) => response.json())
-        .then((data) => {
-            setData(data.ratings);
-            setIsLoading(false);
-        })
-        .catch((error) => console.log(error))
-        
+        if(process.env.NODE_ENV === "development") {
+            fetch("/evaluations.json")
+            .then((response) => response.json())
+            .then((data) => {
+                setData(data.ratings);
+                setIsLoading(false);
+                console.log('data.ratings :>> ', data.ratings);
+            })
+            .catch((error) => console.log(error))
+            
+        } else {
+            fetch("https://www.codeur.com/-aguilet/evaluations.json")
+            .then((response) => response.json())
+            .then((data) => {
+                setData(data.ratings);
+                setIsLoading(false);
+            })
+            .catch((error) => console.log(error))
+        }        
 
         const cardsContainer = document.querySelector(".review-wrapper");
         const cards = document.querySelectorAll(".review-item");
@@ -68,22 +112,13 @@ export default function ReviewWidget() {
         gsap.to(firstCard, {x: "-=100%", opacity: 0, duration: 1,
         onComplete: () => {
             firstCard.remove();
-            // for (let i = 0; i < cards.length; i++) {
-            //     gsap.to(cards[i], {
-            //         left: `-=20px`,
-            //         top: `+=20px`,
-            //         duration: 1
-            //     })
-            // }
             setCount(count + 1);
         }})
 
     }
 
     function formatDate(date: string) {
-        console.log(date)
         const inputDate = new Date(date);
-        console.log(inputDate)
         const day = inputDate.getDate().toString().padStart(2, "0");
         const month = (inputDate.getMonth() + 1).toString().padStart(2, "0");
         const year = inputDate.getFullYear();
@@ -93,9 +128,6 @@ export default function ReviewWidget() {
     
 
     return (
-        // <div className="
-        // flex gap-8
-        // " >
         <>
         <div className="
         review-wrapper
@@ -107,9 +139,8 @@ export default function ReviewWidget() {
             isLoading ? (
                 <p>Chargement...</p>
             ) : (
-                data.map((review, index) => {
-                    review = review.rating;
-                    console.log(review)
+                data?.map((raw_review, index) => {
+                    const review: inReview = raw_review.rating;
                     return (
                         <div key={index} className="flex flex-col gap-4
                         rounded-2xl border-8 border-gray-200 p-6 card
@@ -145,27 +176,6 @@ export default function ReviewWidget() {
             
         }
 
-{/* <div className="flex flex-col gap-4
-            rounded-2xl border-8 border-gray-200 p-6 card
-            review-item bg-white
-            ">
-                <div className="flex gap-4">
-                    <div className="w-20 h-20 rounded-full bg-blue-500"></div>
-                    <div className="flex flex-col gap-2">
-                        <p className="text-blue-500">John Doe 1</p>
-                        <p className="text-sm">CEO de la société Lorem Ipsum</p>
-                    </div>
-                </div>
-                <p className="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus. Quia, voluptatem. Quisquam, voluptatibus. Quia, voluptatem.</p>
-            </div> */}
-
-            {/* <div className="flex flex-col mx-auto end-text -z-1 relative" >
-                <p>Et pourquoi pas vous ?</p>
-                <PrimaryLink href="https://www.codeur.com/-aguilet" target="_blank" className="mt-4">
-                    Découvrir mon profil
-                </PrimaryLink>
-            </div> */}
-
             <div className="flex flex-col gap-4
             rounded-2xl border-8 border-gray-200 p-6 card
             bg-white end-review-item hidden
@@ -185,15 +195,22 @@ export default function ReviewWidget() {
 
         </div>
 
-<button  
-        className="
-        w-fit py-3 px-7 text-white font-bold relative
-        transition duration-300 bg-black hover:bg-blue-500 transition duration-300
-        next-review-btn
-        "
-        onClick={() => {nextCard()}} >
-    Prochain avis
-</button>
+<div className="flex flex-col items-center gap-2">
+    <button  
+            className="
+            w-fit py-3 px-7 text-white font-bold relative
+            transition duration-300 bg-black hover:bg-blue-500 transition duration-300
+            next-review-btn
+            "
+            onClick={() => {nextCard()}} >
+        Prochain avis
+    </button>
+    <p>
+        {count} / {data && data.length} - Avis tirés de Codeur.com
+    </p>
+</div>
+
+
 </>
     )
 }

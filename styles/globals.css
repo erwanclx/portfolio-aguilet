@@ -118,6 +118,7 @@ html {
   position: relative;
   width: 600px;
   height: 400px;
+  z-index: -1;
 }
 
 .review-item {
@@ -149,4 +150,30 @@ html {
 .review-item:nth-child(1) {
   left: 80px;
   top: -80px;
+}
+
+@media screen and (max-width: 767px) {
+  .review-wrapper {
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+  }
+
+  .review-item {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .review-item p {
+    font-size: 14px;
+    line-height: 24px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .review-item:nth-child(1), .review-item:nth-child(2), .review-item:nth-child(3), .review-item:nth-child(4), .review-item:nth-child(5) {
+    left: 0;
+    top: 0;
+  }
 }
