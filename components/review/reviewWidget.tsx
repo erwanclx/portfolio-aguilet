@@ -206,7 +206,7 @@ export default function ReviewWidget() {
         Prochain avis
     </button>
     <p>
-        {count} / {data && data.length} - Avis tirés de Codeur.com
+        {count} / {data && data.length} - Avis tirés de <a href="https://www.codeur.com/-aguilet" target="_blank" className="text-blue-500">Codeur.com</a>
     </p>
 </div>
 
