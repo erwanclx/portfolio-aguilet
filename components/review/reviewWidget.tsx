@@ -68,7 +68,8 @@ export default function ReviewWidget() {
             .catch((error) => console.log(error))
             
         } else {
-            fetch("https://www.codeur.com/-aguilet/evaluations.json")
+            fetch("https://codeur.api.arthur-guilet.fr/")
+            // fetch("https://www.codeur.com/-aguilet/evaluations.json")
             .then((response) => response.json())
             .then((data) => {
                 setData(data.ratings);
