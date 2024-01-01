@@ -5,6 +5,7 @@ import TwoLayout from '@/components/section/two-layout'
 import Carousel from '@/components/section/carousel'
 import Bento from '@/components/section/bento'
 import Review from '@/components/section/review'
+import Footer from '@/components/navigation/footer/footer'
 import Title from '@/components/text/title'
 import { PrimaryButton, PrimaryLink } from '@/components/button/button'
 
@@ -41,6 +42,7 @@ export default function Home() {
       <Carousel />
       <Bento />
       <Review />
+      <Footer />
     </>
   )
 }

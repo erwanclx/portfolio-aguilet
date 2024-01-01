@@ -10,7 +10,7 @@ export default function Review() {
         <>
             <Section id="review" className="flex
             flex-col
-            gap-8 lg:gap-32 justify-center items-center
+            gap-8 lg:gap-12 justify-center
             ">
 
             <div className='flex flex-col gap-2 lg:gap-8'>

@@ -3,6 +3,8 @@ import Star from "./star";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { PrimaryLink, PrimaryButton } from "../button/button";
+import ReviewSkeleton from "./reviewSkeleton";
+import ReviewCard from "./reviewCard";
 import Link from "next/link";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -41,10 +43,12 @@ export default function ReviewWidget() {
     }
 
     const reviewWrapper = useRef(null);
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(3);
     // const [data, setData] = useState(null);
     const [data, setData] = useState<Review[] | null>(null);
     const [isLoading, setIsLoading] = useState(true);
+    
+    const [reviewsIndexes, setReviewsIndexes] = useState([0, 1, 2]);
 
     useEffect(() => {
         if(data && count === data.length) {
@@ -52,6 +56,7 @@ export default function ReviewWidget() {
             const nextBtn = document.querySelector(".next-review-btn");
             lastCard?.classList.remove("hidden");
             gsap.to(nextBtn, {opacity: 0, duration: 0.5})
+            nextBtn?.remove();
         }
     }, [count, data])
 
@@ -108,15 +113,28 @@ export default function ReviewWidget() {
     }, [])
 
     function nextCard() {
-        const cards = document.querySelectorAll(".review-item");
-        const firstCard = cards[ cards.length - 1 ];
+        // const cards = document.querySelectorAll(".review-item");
+        // const firstCard = cards[ cards.length - 1 ];
 
-        gsap.to(firstCard, {x: "-=100%", opacity: 0, duration: 1,
+        // gsap.to(firstCard, {x: "-=100%", opacity: 0, duration: 1,
+        // onComplete: () => {
+        //     firstCard.remove();
+        //     setCount(count + 3);
+        // }})
+
+        gsap.to(reviewWrapper.current, {opacity: 0, duration: 0.5,
         onComplete: () => {
-            firstCard.remove();
-            setCount(count + 1);
+            setReviewsIndexes([reviewsIndexes[0] + 3, reviewsIndexes[1] + 3, reviewsIndexes[2] + 3]);
+            // setCount(count + 3);
+            // Set max count to data.length
+            if(count + 3 > data.length) {
+                setCount(data.length);
+            } else {
+                setCount(count + 3);
+            }
+            gsap.to(reviewWrapper.current, {opacity: 1, duration: 0.5});
         }})
-
+        
     }
 
     function formatDate(date: string) {
@@ -136,51 +154,81 @@ export default function ReviewWidget() {
         "
         ref={reviewWrapper}
         >
-            
-        {
-            isLoading ? (
-                <p>Chargement...</p>
+
+            {isLoading ? (
+                <>
+
+                <ReviewSkeleton/>
+
+
+                <ReviewSkeleton/>
+
+                <ReviewSkeleton/>
+                
+                </>
             ) : (
-                data?.reverse().map((raw_review, index) => {
-                    const review: inReview = raw_review.rating;
-                    return (
-                        <div key={index} className="flex flex-col gap-4
-                        rounded-2xl border-8 border-gray-200 p-6 card
-                        review-item bg-white
-                        ">
-                            <div className="flex gap-4">
-                                <div className="w-full flex justify-between" >
-                                    <Link href={review.rater.url} target="_blank" className="flex flex-col gap-2">
-                                        <p className="text-blue-500">{review.rater.name}</p>
-                                        <p className="text-sm">Le {
-                                            formatDate(review.created_at)
-                                        } </p>
-                                    </Link>
-                                    <div className="flex flex-col justify-center" >
-
-                                        <div className="flex">
-                                            {[...Array(review.rating)].map((star, index) => ( 
-                                                <Star key={index} fill='currentColor'/>
-                                            ))}
-                                            {[...Array(5 - review.rating)].map((star, index) => (
-                                                <Star key={index} />
-                                            ))}
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            <p className="text-xl">{review.content}</p>
-                        </div>
+                <>
+                
+                {/* {
+                    data && reviewsIndexes[0] >= data.length ? (
+                        <ReviewSkeleton/>
+                    ) : (
+                        <ReviewCard
+                        name={data[reviewsIndexes[0]].rating.rater.name}
+                        date={'Le ' + formatDate(data[reviewsIndexes[0]].rating.created_at)}
+                        content={data[reviewsIndexes[0]].rating.content}
+                        />
                     )
-                })
-            )
-            
-        }
+                }
 
+                {
+                    data && reviewsIndexes[1] >= data.length ? (
+                        <ReviewSkeleton/>
+                    ) : (
+                        <ReviewCard
+                        name={data[reviewsIndexes[1]].rating.rater.name}
+                        date={'Le ' + formatDate(data[reviewsIndexes[1]].rating.created_at)}
+                        content={data[reviewsIndexes[1]].rating.content}
+                        />
+                    )
+                }
+
+                {
+                    data && reviewsIndexes[2] >= data.length ? (
+                        <ReviewSkeleton/>
+                    ) : (
+                        <ReviewCard
+                        name={data[reviewsIndexes[2]].rating.rater.name}
+                        date={'Le ' + formatDate(data[reviewsIndexes[2]].rating.created_at)}
+                        content={data[reviewsIndexes[2]].rating.content}
+                        />
+                    )
+                } */}
+
+                {
+
+                    [...Array(3)].map((star, index) => (
+                        data && reviewsIndexes[index] >= data.length ? (
+                            null
+                        ) : (
+                            <ReviewCard
+                            key={index}
+                            name={data[reviewsIndexes[index]].rating.rater.name}
+                            date={'Le ' + formatDate(data[reviewsIndexes[index]].rating.created_at)}
+                            content={data[reviewsIndexes[index]].rating.content}
+                            title={data[reviewsIndexes[index]].rating.project.title}
+                            />
+                        )
+                    ))
+
+                }
+
+                </>
+            )}
+            
             <div className="flex flex-col gap-4
-            rounded-2xl border-8 border-gray-200 p-6 card
-            bg-white end-review-item hidden
+            rounded-3xl p-12 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]
+            bg-white end-review-item w-full hidden
             ">
                 <div className="flex gap-4">
                     <div className="flex flex-col gap-2">
@@ -188,11 +236,9 @@ export default function ReviewWidget() {
                         <p className="text-sm">En savoir plus sur moi</p>
                     </div>
                 </div>
-            <div className="w-full h-full flex justify-center review-items-center">
                 <PrimaryLink href="/about">
                     Découvrir qui je suis
                 </PrimaryLink>
-            </div>
             </div>
 
         </div>
@@ -205,7 +251,7 @@ export default function ReviewWidget() {
             next-review-btn
             "
             onClick={() => {nextCard()}} >
-        Prochain avis
+        Prochains avis
     </button>
     <p>
         {count} / {data && data.length} - Avis tirés de <a href="https://www.codeur.com/-aguilet" target="_blank" className="text-blue-500">Codeur.com</a>

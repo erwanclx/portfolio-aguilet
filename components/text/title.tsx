@@ -8,7 +8,7 @@ export default function Title(props: any) {
             )
         case 'h2':
             return (
-                <h2 className={'text-3xl lg:text-6xl font-medium ' + props.className}>
+                <h2 className={'text-3xl lg:text-4xl font-medium ' + props.className}>
                     {props.children}
                 </h2>
             )
