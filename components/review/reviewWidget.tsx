@@ -125,13 +125,13 @@ export default function ReviewWidget() {
         gsap.to(reviewWrapper.current, {opacity: 0, duration: 0.5,
         onComplete: () => {
             setReviewsIndexes([reviewsIndexes[0] + 3, reviewsIndexes[1] + 3, reviewsIndexes[2] + 3]);
-            // setCount(count + 3);
-            // Set max count to data.length
-            if(count + 3 > data.length) {
+
+            if(data && count + 3 > data.length) {
                 setCount(data.length);
             } else {
                 setCount(count + 3);
             }
+            
             gsap.to(reviewWrapper.current, {opacity: 1, duration: 0.5});
         }})
         
@@ -206,22 +206,27 @@ export default function ReviewWidget() {
                 } */}
 
                 {
-
-                    [...Array(3)].map((star, index) => (
-                        data && reviewsIndexes[index] >= data.length ? (
-                            null
-                        ) : (
-                            <ReviewCard
-                            key={index}
-                            name={data[reviewsIndexes[index]].rating.rater.name}
-                            date={'Le ' + formatDate(data[reviewsIndexes[index]].rating.created_at)}
-                            content={data[reviewsIndexes[index]].rating.content}
-                            title={data[reviewsIndexes[index]].rating.project.title}
-                            />
-                        )
-                    ))
-
+                    [...Array(3)].map((star, index) => {
+                        const dataIndex = reviewsIndexes[index];
+                    
+                        if (data && dataIndex >= 0 && dataIndex < data.length) {
+                            const reviewData = data[dataIndex].rating;
+                        
+                            return (
+                                <ReviewCard
+                                    key={index}
+                                    name={reviewData.rater.name}
+                                    date={'Le ' + formatDate(reviewData.created_at)}
+                                    content={reviewData.content}
+                                    title={reviewData.project.title}
+                                />
+                            );
+                        } else {
+                            return null;
+                        }
+                    })
                 }
+
 
                 </>
             )}

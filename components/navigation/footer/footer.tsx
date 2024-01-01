@@ -48,7 +48,7 @@ export default function Footer() {
             <ul className='bg-white h-full w-full flex flex-col sm:flex-row sm:items-center px-8 justify-between py-6'>
                 {links.map((link, index) => (
                     <li key={index}>
-                        <Link href={link.link}>{link.name}</Link>
+                        <Link className='lg:text-xl' href={link.link}>{link.name}</Link>
                     </li>
                 ))}
             </ul>
