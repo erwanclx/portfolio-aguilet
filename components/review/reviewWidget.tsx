@@ -73,6 +73,7 @@ export default function ReviewWidget() {
             .then((response) => response.json())
             .then((data) => {
                 setData(data.ratings);
+
                 setIsLoading(false);
             })
             .catch((error) => console.log(error))
@@ -140,7 +141,7 @@ export default function ReviewWidget() {
             isLoading ? (
                 <p>Chargement...</p>
             ) : (
-                data?.map((raw_review, index) => {
+                data?.reverse().map((raw_review, index) => {
                     const review: inReview = raw_review.rating;
                     return (
                         <div key={index} className="flex flex-col gap-4
