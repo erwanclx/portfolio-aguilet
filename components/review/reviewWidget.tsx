@@ -88,7 +88,6 @@ export default function ReviewWidget() {
         const cards = document.querySelectorAll(".review-item");
         const lastText = document.querySelector(".end-text");
         const lastCard = cards[cards.length - 1];
-        console.log(lastCard)
 
         const tl = gsap.timeline({defaults: {ease: "power3.inOut"}})
 
@@ -102,7 +101,7 @@ export default function ReviewWidget() {
 
         ScrollTrigger.create({
             trigger: cardsContainer,
-            start: "top center",
+            start: "top bottom",
             animation: tl,
             toggleActions: "play none none none"
         })
