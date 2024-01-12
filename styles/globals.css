@@ -37,14 +37,14 @@ html {
 }
 
 @media screen and (min-width: 768px) {
-  p, a, span {
-    /* font-size: calc(.8928571429vw + 7.1428571429px); */
-    font-size: min(1.2rem, calc(.8928571429vw + 7.1428571429px));
+  p, a {
+    font-size: calc(.8928571429vw + 7.1428571429px);
+    /* font-size: min(1.2rem, calc(.8928571429vw + 7.1428571429px)); */
   }
 }
 
 @media only screen and (max-width: 767px) {
-  p, a, span {
+  p, a {
     font-size: 14px;
     line-height: 24px;
   }

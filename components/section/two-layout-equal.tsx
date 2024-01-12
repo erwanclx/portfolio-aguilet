@@ -9,6 +9,7 @@ export default function TwoLayoutEqual() {
         <Section id="contact" className="
         flex 
         flex-col-reverse justify-evenly
+        items-center
         2xl:flex-row
         md:gap-10
         lg:gap-10

@@ -112,7 +112,7 @@ export default function Header() {
                         <span className='h-0.5 w-5 bg-black'></span>
                     </li>
 
-                    <li className='hidden md:flex md:max-w-xl items-center justify-between w-1/2'>
+                    <li className='hidden md:flex md:max-w-xl text-xl items-center justify-between w-1/2'>
                         {menu.map((item, index) => {
                             if (item.subMenu) {
                                 return (
@@ -123,7 +123,7 @@ export default function Header() {
                                             {item.subMenu.map((subItem, index) => {
                                                 return (
                                                     <li className='h-10 flex items-center border-b-[1px] border-grey hover:text-blue-500' key={index}>
-                                                        <Link href={subItem.link}>{subItem.name}</Link>
+                                                        <Link className='text-xl ' href={subItem.link}>{subItem.name}</Link>
                                                     </li>
                                                 )
                                             })}
@@ -135,7 +135,7 @@ export default function Header() {
                             }
                             else {
                                 return (
-                                    <a className='desk_navlinks hover:text-blue-500' key={index} href={item.link}>{item.name}</a>
+                                    <a className='desk_navlinks text-xl hover:text-blue-500' key={index} href={item.link}>{item.name}</a>
                                 )
                             }
                         })}
@@ -145,7 +145,7 @@ export default function Header() {
             </nav>
 
             <div className='hidden_menu absolute -top-full left-0 w-full h-auto bg-white z-10'>
-                <ul className='w-full h-auto flex flex-col pt-12 items-center border-b-[1px] border-black
+                <ul className='w-full h-auto flex flex-col pt-12 items-center border-b-[1px] border-black text-2xl
                 '>
                 {menu.map((item, index) => {
                         if(item.subMenu) {
@@ -155,7 +155,7 @@ export default function Header() {
                                     {
                                         item.subMenu.map((item, index) => {
                                             return (
-                                                <li key={index} className='navbar_mobile_links relative text-2xl px-5 border-b-[1px] border-gray w-full h-14 cursor-pointer submenu_mobile hidden opacity-0 '><Link href={item.link} className='w-full h-full flex items-center justify-between'>{item.name} <ChevronRight/> </Link></li>
+                                                <li key={index} className='navbar_mobile_links relative text-2xl px-5 border-b-[1px] border-gray w-full h-14 cursor-pointer submenu_mobile hidden opacity-0 '><Link href={item.link} className='w-full h-full flex items-center justify-between text-2xl'>{item.name} <ChevronRight/> </Link></li>
                                             )
                                         })
                                     }
@@ -164,7 +164,7 @@ export default function Header() {
                             )
                         } else {
                             return (
-                                <li key={index} className='navbar_mobile_links relative text-2xl px-5 opacity-0 border-b-[1px] border-gray w-full h-14 cursor-pointer'><Link href={item.link} className='w-full h-full flex items-center justify-between'>{item.name}<ChevronRight/></Link></li>
+                                <li key={index} className='navbar_mobile_links relative text-2xl px-5 opacity-0 border-b-[1px] border-gray w-full h-14 cursor-pointer'><Link href={item.link} className='w-full h-full flex items-center justify-between text-2xl'>{item.name}<ChevronRight/></Link></li>
                             )
                         }
                 })}
