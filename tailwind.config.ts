@@ -15,7 +15,10 @@ const config: Config = {
       },
       spacing: {
         'carousel-item': 'calc(100vw - 2rem)',
-      }
+      },
+      screens: {
+        '2xl': '1800px',
+      },
     },
   },
   plugins: [],

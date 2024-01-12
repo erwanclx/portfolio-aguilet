@@ -53,8 +53,20 @@ function PrimaryButton(props: any) {
 }
 
 function SecondaryButton(props: any) {
-    return <button className="">{props.children}</button>;
+    return <button className="bg-white
+    w-fit py-3 px-7 text-black font-bold relative
+    transition duration-300 
+    hover:bg-[#1a3c73] hover:text-white
+    ">{props.children}</button>;
 }
+
+// function SecondaryButton(props: any) {
+//   return <button className="bg-[#1a3c73]
+//   w-fit py-3 px-7 text-white font-bold relative
+//   transition duration-300
+//   ">{props.children}</button>;
+// }
+
 
 function PrimaryLink(props: any) {
 
@@ -86,6 +98,7 @@ return (
       ref={btnRef}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      target={props.target ? props.target : ""}
       >{props.children}
       <span className=""><ChevronRight className="text-white w-[22px]"/></span>
     </Link>
