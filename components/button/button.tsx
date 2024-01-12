@@ -46,7 +46,7 @@ function PrimaryButton(props: any) {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         >{props.children}
-        <span className=""><ChevronRight className="text-white w-[22px]"/></span>
+        {/* <span className=""><ChevronRight className="text-white w-[22px]"/></span> */}
       </button>
     </>
   ) 
@@ -100,7 +100,7 @@ return (
       onMouseLeave={() => setIsHovered(false)}
       target={props.target ? props.target : ""}
       >{props.children}
-      <span className=""><ChevronRight className="text-white w-[22px]"/></span>
+      {/* <span className=""><ChevronRight className="text-white w-[22px]"/></span> */}
     </Link>
   </>
 ) 
