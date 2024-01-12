@@ -19,7 +19,7 @@ export default function Hero() {
 
     return (
         <section id="hero" className='w-full bg-cover -z-10' style={{height: '100dvh', backgroundImage: 'url(/hero.jpg)', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}} >
-            <div className="w-full h-full pt-12 md:pt-24 relative" >
+            <div className="ToAnimateClass w-full h-full pt-12 md:pt-24 relative" >
                 <div className="w-full flex flex-col gap-8 absolute left-0 top-2/3 top-[60%] md:max-w-[60%] pl-4 md:pl-10">
                     <h1 className="text-white text-4xl md:text-7xl font-extrabold">
                         VOS PROJETS CONCRÉTISÉS EN TOUTE SÉRÉNITÉ.
