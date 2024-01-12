@@ -38,7 +38,8 @@ html {
 
 @media screen and (min-width: 768px) {
   p, a, span {
-    font-size: calc(.8928571429vw + 7.1428571429px);
+    /* font-size: calc(.8928571429vw + 7.1428571429px); */
+    font-size: min(1.2rem, calc(.8928571429vw + 7.1428571429px));
   }
 }
 
