@@ -23,10 +23,6 @@ export default function CalendlyWidget() {
 
     return (
         <>
-        {/* Add media queries for phone  */}
-            {/* <div className="calendly-inline-widget" data-url="https://calendly.com/aguilet/premiere-prise-de-contact" style={{ width: '100%', minHeight: '700px',  height: '100%' }}></div> */}
-
-            {/* Add media queries for phone  */}
             <div className="calendly-inline-widget" data-url="https://calendly.com/aguilet/premiere-prise-de-contact"></div>
         
             <style jsx>{`        

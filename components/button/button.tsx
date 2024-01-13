@@ -107,7 +107,11 @@ return (
 }
 
 function SecondaryLink(props: any) {
-  return <Link href={props.href} className="">{props.children}</Link>;
+  return <Link href={props.href} className="bg-white
+    w-fit py-3 px-7 text-black font-bold relative
+    transition duration-300 
+    hover:bg-[#1a3c73] hover:text-white
+  ">{props.children}</Link>;
 }
 
 export { PrimaryButton, SecondaryButton, PrimaryLink, SecondaryLink };

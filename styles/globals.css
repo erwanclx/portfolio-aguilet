@@ -50,6 +50,15 @@ html {
   }
 }
 
+
+/* Preloader */
+
+.char {
+  opacity: 0;
+}
+
+/* ----=- */
+
 .desk_navlinks::after {
   content: "";
   display: block;
