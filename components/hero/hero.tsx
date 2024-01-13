@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { ChevronBottom } from "../navigation/header/chevron"
-import { PrimaryButton, SecondaryButton } from "../button/button"
+import { PrimaryButton, PrimaryLink, SecondaryButton, SecondaryLink } from "../button/button"
 import { useEffect } from "react"
 import gsap from "gsap"
 
@@ -25,12 +25,11 @@ export default function Hero() {
                         VOS PROJETS CONCRÉTISÉS EN TOUTE SÉRÉNITÉ.
                     </h1>
                     <div className="flex gap-8">
-                        <PrimaryButton className="mr-4">
+                        {/* <PrimaryButton className="mr-4">
                             <Link href="#contact">Contactez-moi</Link>
-                        </PrimaryButton>
-                        <SecondaryButton className="">
-                            <Link href="#main">En savoir plus</Link>
-                        </SecondaryButton>
+                        </PrimaryButton> */}
+                        <PrimaryLink href="#contact">Contactez-moi</PrimaryLink>
+                        <SecondaryLink href="#main">En savoir plus</SecondaryLink>
                     </div>
                 </div>
                 <Link className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-10 hero_cta" href="#main">

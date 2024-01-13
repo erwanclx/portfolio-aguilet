@@ -100,7 +100,7 @@ export default function Header() {
                 ">
                     <li>
                         <Link href='/'>
-                            <Image alt='Logo Arthur Guilet' width={100} height={100}
+                            <Image id='LogoHeader' alt='Logo Arthur Guilet' width={100} height={100}
                             className="w-8 md:w-20 md:py-2"
                             src="/logo.png"/>
                         </Link>

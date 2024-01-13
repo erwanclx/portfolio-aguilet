@@ -14,7 +14,9 @@ export default function TwoLayoutEqual() {
         md:gap-10
         lg:gap-10
         h-auto
-        ">
+        min-h-[100dvh]
+        "
+        >
           
             <div className='left h-1/2 2xl:w-2/3 md:h-auto '>
               <CalendlyWidget />
