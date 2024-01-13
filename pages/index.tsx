@@ -7,7 +7,8 @@ import Bento from '@/components/section/bento'
 import Review from '@/components/section/review'
 import Footer from '@/components/navigation/footer/footer'
 import Title from '@/components/text/title'
-import { PrimaryButton, PrimaryLink } from '@/components/button/button'
+import ScrollToTop from '@/components/navigation/scrollToTop'
+
 import gsap from 'gsap'
 import {ScrollTrigger} from "gsap/dist/ScrollTrigger"
 import { useRef , useEffect } from 'react'
@@ -19,7 +20,9 @@ export default function Home() {
 
   useEffect(() => {
 
-    const sections = document.querySelectorAll('.ToAnimateClass'); // assuming you have a common class 'section' for all sections
+    // Appears on scroll
+
+    const sections = document.querySelectorAll('.ToAnimateClass');
 
     const timelines = Array.from(sections).map((section) => {
       const tl = gsap.timeline({ defaults: { ease: "power3.inOut" } });
@@ -35,6 +38,21 @@ export default function Home() {
 
     });
 
+    // Scroll to top
+
+    const main = document.querySelector('#main')
+    const scrollToTop = document.querySelector('#scrollToTop')
+    const tlScrollToTop = gsap.timeline({ defaults: { ease: "power3.inOut" } });
+    tlScrollToTop.fromTo(scrollToTop, { opacity: 0 }, { opacity: 1, duration: 1.5 });
+
+    ScrollTrigger.create({
+      trigger: main,
+      animation: tlScrollToTop,
+      toggleActions: "play none none none",
+      onEnterBack: () => tlScrollToTop.reverse(),
+    });
+
+
   }
   , [])
   
@@ -42,6 +60,9 @@ export default function Home() {
   return (
     <>
       <Header />
+      <div id='scrollToTop' className='fixed bottom-0 right-0 z-50'>
+        <ScrollToTop />
+      </div>
       <Hero />
       <TwoLayout />
       <Carousel />
