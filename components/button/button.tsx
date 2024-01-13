@@ -36,15 +36,15 @@ function PrimaryButton(props: any) {
 
   return (
     <>
-      <button className="
-        btn-primary
-        w-fit py-3 px-7 text-white font-bold relative
-        transition duration-300
-        "
+      <button className={
+        "btn-primary w-fit py-3 px-7 text-white font-bold relative transition duration-300"
+        + (props.className ? props.className : "")
+      }
         style={{backgroundImage: 'linear-gradient(90deg, #3b82f6 0%, #3b82f6 100%)'}}
         ref={btnRef}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        onClick={props.onClick}
         >{props.children}
         {/* <span className=""><ChevronRight className="text-white w-[22px]"/></span> */}
       </button>
