@@ -33,7 +33,9 @@ export default function Preloader() {
                   y: '-100%',
                   duration: 1.2,
                   onComplete: () => {
-                    preloaderRef.current.remove();
+                    if (preloaderRef.current) {
+                      (preloaderRef.current as HTMLElement).remove();
+                    }
                   }
                 });
               },
