@@ -59,6 +59,14 @@ html {
 
 /* ----=- */
 
+/* Usual */
+
+.no_padding {
+  padding: 0 !important;
+}
+
+/* ------ */
+
 .desk_navlinks::after {
   content: "";
   display: block;
@@ -221,6 +229,11 @@ section {
   grid-template-rows: 1fr .5fr;
 }
 
+.linksgrid-footer {
+  display: grid;
+  grid-template-columns: 0.2fr 1fr;
+}
+
 .copyrightgrid-footer {
   display: grid;
   grid-template-columns: 1fr 0.6fr;
@@ -237,4 +250,59 @@ section {
   .copyrightgrid-footer {
     grid-template-columns: auto;
   }
+}
+
+
+
+/* About */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.3fr 1fr 1fr;
+  grid-template-rows: 0.5fr 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+}
+
+.about-grid-secondary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.5fr 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+}
+
+.col-1 {
+  grid-column: 1;
+}
+
+.col-2 {
+  grid-column: 2;
+}
+
+.col-3 {
+  grid-column: 3;
+}
+
+.row-1 {
+  grid-row: 1;
+}
+
+.row-2 {
+  grid-row: 2;
+}
+
+.row-3 {
+  grid-row: 3;
+}
+
+.row-4 {
+  grid-row: 4;
+}
+
+.fill-col {
+  grid-row: 2 / 5;
+}
+
+.fill-first-row {
+  grid-column: 1 / 4;
+  grid-row: 1;
 }

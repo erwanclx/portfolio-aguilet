@@ -14,15 +14,15 @@ export default function Preloader() {
     console.log(LogoheaderBoundingRect);
 
     gsap.to('.char', {
-      duration: 0.5,
+      duration: 0.2,
       opacity: 1,
       stagger: 0.1,
       onComplete: () => {
         gsap.to('.char', {
-          duration: 0.5,
+          duration: 0.2,
           opacity: 0,
           stagger: 0.1,
-          delay: 0.5,
+          delay: 0.2,
           onComplete: () => {
             gsap.to(preloaderRef.current, {
               
@@ -31,7 +31,7 @@ export default function Preloader() {
               onComplete: () => {
                 gsap.to(preloaderRef.current, {
                   y: '-100%',
-                  duration: 1.2,
+                  duration: 1,
                   onComplete: () => {
                     if (preloaderRef.current) {
                       (preloaderRef.current as HTMLElement).remove();

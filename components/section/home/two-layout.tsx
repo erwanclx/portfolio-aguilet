@@ -1,7 +1,7 @@
 import Image from 'next/image'
-import Section from './section'
-import Title from '../text/title'
-import { PrimaryLink } from '../button/button'
+import Section from '../section'
+import Title from '../../text/title'
+import { PrimaryLink } from '../../button/button'
 
 export default function TwoLayout() {
     return (

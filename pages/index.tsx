@@ -1,18 +1,19 @@
 import Image from 'next/image'
 import Header from '@/components/navigation/header/header'
 import Hero from '@/components/hero/hero'
-import TwoLayout from '@/components/section/two-layout'
-import Carousel from '@/components/section/carousel'
-import Bento from '@/components/section/bento'
-import Review from '@/components/section/review'
+import TwoLayout from '@/components/section/home/two-layout'
+import Carousel from '@/components/section/home/carousel'
+import Bento from '@/components/section/home/bento'
+import Review from '@/components/section/home/review'
 import Footer from '@/components/navigation/footer/footer'
 import Title from '@/components/text/title'
 import ScrollToTop from '@/components/navigation/scrollToTop'
+import Preloader from '@/components/navigation/preloader'
 
 import gsap from 'gsap'
 import {ScrollTrigger} from "gsap/dist/ScrollTrigger"
 import { useRef , useEffect } from 'react'
-import TwoLayoutEqual from '@/components/section/two-layout-equal'
+import TwoLayoutEqual from '@/components/section/home/two-layout-equal'
 gsap.registerPlugin(ScrollTrigger)
 
 export default function Home() {
@@ -59,7 +60,8 @@ export default function Home() {
   
   return (
     <>
-      <Header />
+    
+      <Preloader />
       <div id='scrollToTop' className='fixed bottom-0 right-0 z-50'>
         <ScrollToTop />
       </div>
@@ -69,7 +71,6 @@ export default function Home() {
       <Bento />
       <Review />
       <TwoLayoutEqual />
-      <Footer />
     </>
   )
 }

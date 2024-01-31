@@ -1,9 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
-import Section from "./section"
-import Title from "../text/title"
+import Section from "../section"
+import Title from "../../text/title"
 import Image from "next/image"
 import Link from "next/link"
-import { PrimaryLink } from "../button/button"
+import { PrimaryLink } from "../../button/button"
 import gsap from "gsap"
 import { useEffect, useRef } from "react"
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger"

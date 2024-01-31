@@ -1,8 +1,8 @@
 import Image from 'next/image'
-import Section from './section'
-import Title from '../text/title'
-import { PrimaryLink } from '../button/button'
-import CalendlyWidget from '../contact/calendlyWidget'
+import Section from '../section'
+import Title from '../../text/title'
+import { PrimaryLink } from '../../button/button'
+import CalendlyWidget from '../../contact/calendlyWidget'
 
 export default function TwoLayoutEqual() {
     return (

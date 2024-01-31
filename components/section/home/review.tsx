@@ -1,6 +1,6 @@
-import Section from "./section"
-import Title from "../text/title"
-import ReviewWidget from "../review/reviewWidget"
+import Section from "../section"
+import Title from "../../text/title"
+import ReviewWidget from "../../review/reviewWidget"
 import gsap from "gsap"
 import { useEffect } from "react"
 
