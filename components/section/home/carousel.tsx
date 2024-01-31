@@ -1,6 +1,6 @@
-import Section from "./section";
-import Title from "../text/title";
-import { PrimaryLink } from "../button/button";
+import Section from "../section";
+import Title from "../../text/title";
+import { PrimaryLink } from "../../button/button";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";

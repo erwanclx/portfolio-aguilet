@@ -46,7 +46,7 @@ export default function Footer() {
         gap-[1px]
         ">
             <ul className='linksgrid-footer h-full w-full gap-[1px]'>
-                <div className='bg-white w-full h-full flex flex-col sm:flex-row sm:items-center px-8 justify-between py-6'>
+                <div className='bg-white w-full h-full flex flex-col sm:flex-row sm:items-center px-8 justify-center py-6'>
                     <Link href='https://bts.arthur-guilet.fr/' target='_blank' className='lg:text-xl'>
                         Site académique
                     </Link>
@@ -62,6 +62,8 @@ export default function Footer() {
             <div className='bg-gray-500 h-full w-full copyrightgrid-footer gap-[1px]'>
                 <div className="lg:text-base md:text-xl lg:text-2xl flex sm:items-center justify-center bg-white py-6 px-8">
                     Copyright © {new Date().getFullYear()} Arthur Guilet. Tous droits réservés.
+                    <br/>
+                    Développé avec 💖 par Arthur Guilet et Erwan Cloux.
                 </div>
                 <ul className="bg-white w-full h-full flex items-center gap-4 justify-center py-6">
                     {networks.map((network, index) => (

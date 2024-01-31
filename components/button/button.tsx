@@ -53,11 +53,10 @@ function PrimaryButton(props: any) {
 }
 
 function SecondaryButton(props: any) {
-    return <button className="bg-white
-    w-fit py-3 px-7 text-black font-bold relative
-    transition duration-300 
-    hover:bg-[#1a3c73] hover:text-white
-    ">{props.children}</button>;
+    return <button className={
+    "bg-white w-fit py-3 px-7 text-black font-bold relative transition duration-300 hover:bg-[#1a3c73] hover:text-white"
+     + (props.className ? props.className : "")
+    } >{props.children}</button>;
 }
 
 // function SecondaryButton(props: any) {
