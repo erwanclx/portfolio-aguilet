@@ -136,6 +136,11 @@ export const services_links = [
           },
         ],
       },
+      second: {
+        title: "Un suivi personnalisé",
+        content:
+          "Avec une maintenance régulière ou simplement des prestations ponctuelles, je vous accompagne dans l'évolution de votre solution et les résolutions de bugs, pour qu'elle reste toujours adaptée à vos besoins et à ceux de vos utilisateurs.",
+      },
     },
   },
 ];
