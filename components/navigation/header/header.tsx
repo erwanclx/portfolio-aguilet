@@ -4,14 +4,11 @@ import React, { useState, useRef, useEffect } from 'react'
 import { useClickOutside } from '@/hooks/clickOutside'
 import gsap from 'gsap'
 import { ChevronRight, ChevronBottom } from './chevron'
+import { services_links } from '@/data/services'
 
 const menu = [
     {name: 'Accueil', link: '/'},
-    {name: 'Prestations', link: '/prestations', subMenu: [
-        {name: 'Administation Système', link: '/prestations/administration-systeme'},
-        {name: 'Administation Réseau', link: '/prestations/developpement-logiciel'},
-        {name: 'Développement Web', link: '/prestations/developpement-web'},
-    ]},
+    {name: 'Prestations', link: '/prestations', subMenu: services_links},
     {name: 'Abonnements', link: '/abonnements'},
     {name: 'Contact', link: '/contact'}
 ]

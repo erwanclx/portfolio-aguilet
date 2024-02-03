@@ -32,11 +32,11 @@ export default function Preloader() {
                 gsap.to(preloaderRef.current, {
                   y: '-100%',
                   duration: 1,
-                  onComplete: () => {
-                    if (preloaderRef.current) {
-                      (preloaderRef.current as HTMLElement).remove();
-                    }
-                  }
+                  // onComplete: () => {
+                  //   if (preloaderRef.current) {
+                  //     (preloaderRef.current as HTMLElement).remove();
+                  //   }
+                  // }
                 });
               },
             })

@@ -1,0 +1,106 @@
+:root {
+    --clr-1: #e9e9e9;
+    --clr-2: #111828;
+    --clr-3: #101b32;
+    --clr-4: #0e234e;
+    --clr-5: #0035a0;
+    --rotation: 0deg;
+
+    --border-radius: 0.5em;
+}
+
+.filter-white {
+    filter: brightness(0) invert(1);
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+}
+
+/* .touchme {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+} */
+
+/* If tactile */
+/* @media (hover: none) {
+    .card:hover .touchme {
+        display: none;
+    }
+} */
+
+.card:hover .filter-white {
+    opacity: 1;
+}
+
+.card {
+    cursor: pointer;
+    height: 40vh;
+    aspect-ratio: 1/1.2;
+    background-color: var(--clr-2) ;
+
+    border-radius: var(--border-radius);
+
+    position: relative;
+    animation: rotateGradient 5s linear infinite;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    inset: -.5rem;
+    background: conic-gradient(
+    from var(--rotation),
+    var(--clr-3),
+    var(--clr-4),
+    var(--clr-5),
+    var(--clr-4),
+    var(--clr-3)
+    );
+    border-radius: calc(var(--border-radius) + .5rem);
+    z-index: -1;
+    
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+    130deg, 
+    transparent 0% 33%, 
+    var(--clr-3) 66%, 
+    var(--clr-4) 83.5%, 
+    var(--clr-5) 100%
+    );
+    background-position: 0% 0%;
+    background-size: 300% 300%;
+    transition: background-position 350ms ease, transform 350ms ease;
+    border-radius: calc(var(--border-radius) + .5rem);
+    /* filter: blur(1em); */
+}
+
+.card:hover::after {
+    background-position: 100% 100%;
+    transform: scale(1.02);
+}   
+
+.card::after {
+    filter: blur(1em);
+}
+
+
+/* @keyframes rotateGradient {
+    to {
+        --rotation: calc(var(--rotation) + 10deg);
+    }
+} */
+
+@keyframes rotateGradient {
+  from {
+    --rotation: 0deg;
+  }
+  to {
+    --rotation: 360deg;
+  }
+}
