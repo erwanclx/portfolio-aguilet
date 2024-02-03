@@ -38,7 +38,11 @@ html {
 
 @media screen and (min-width: 768px) {
   p, a {
-    font-size: calc(.8928571429vw + 7.1428571429px);
+    /* font-size: calc(.8928571429vw + 7.1428571429px); */
+    font-size: min(1.5rem, calc(.8928571429vw + 7.1428571429px));
+
+
+
     /* font-size: min(1.2rem, calc(.8928571429vw + 7.1428571429px)); */
   }
 }
@@ -305,4 +309,39 @@ section {
 .fill-first-row {
   grid-column: 1 / 4;
   grid-row: 1;
+}
+
+/* Prestations */
+
+#more-variant {
+  position: relative;
+  overflow: hidden;
+}
+
+#more-variant::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAAAAXNSR0IArs4c6QAAAMRJREFUaEPtljEOwjAAxJrf8SOE0jER4kf8Loi1EpuvSoM7dnBzdoaWbbGnLLZn+zmotfbc9/1xtcEOmr2YhS5RqPd+Px60lHIbY7yP72utr5lHeeVmrvM9m4UsdLKB//mXO1ks9jkLYSpDIAuFxGJYC2EqQyALhcRiWAthKkMgC4XEYlgLYSpDIAuFxGJYC2EqQyALhcRiWAthKkMgC4XEYlgLYSpDIAuFxGJYC2EqQyALhcRiWAthKkMgC4XEYtjlCn0AC+8wNY7+9VoAAAAASUVORK5CYII=");
+  opacity: .75;
+}
+
+#more-variant::after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse at bottom, #0050fe8d 0%, rgba(255, 255, 255, 0) 100%);
+  opacity: 0.4;
+  transition: opacity 0.3s;
 }
