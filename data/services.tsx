@@ -57,6 +57,43 @@ export const services_links = [
       "/systeme.jpg",
       "/systeme.jpg",
     ],
+    shortDescription:
+      "Bénéficiez d'une infrastructure informatique performante, fiable et sécurisée, adaptée à vos besoins et à votre budget. Je vous accompagne dans la création, la mise en place et l'audit de votre infrastructure informatique.",
+    texts: {
+      first: {
+        cards: [
+          {
+            title: "Une infrastructure sur mesure",
+            picto: "/icons/prestations/infrastructure.svg",
+            description:
+              "Conçue pour répondre à vos besoins et à votre budget.",
+          },
+          {
+            title: "Des solutions sécurisées",
+            picto: "/icons/prestations/security.svg",
+            description:
+              "Pour protéger vos données et garantir la confidentialité de vos échanges.",
+          },
+          {
+            title: "Des outils collaboratifs",
+            picto: "/icons/prestations/collaboration.svg",
+            description:
+              "Pour faciliter le travail en équipe et l'échange de données.",
+          },
+          {
+            title: "Un accompagnement personnalisé",
+            picto: "/icons/prestations/support.svg",
+            description:
+              "Pour vous aider à faire les bons choix et à anticiper les évolutions.",
+          },
+        ],
+      },
+      second: {
+        title: "Un accompagnement personnalisé",
+        content:
+          "Je vous accompagne dans la création, la mise en place et l'audit de votre infrastructure informatique. La communication étant le point clé de toute bonne collaboration, des COTECHS et COPILS réguliers sont mis en place afin de vous tenir informé de l'état de votre infrastructure et des actions menées, tout en échangeant sur les évolutions à venir.",
+      },
+    },
   },
   {
     name: "Développement sur mesure",
@@ -69,6 +106,37 @@ export const services_links = [
       "/systeme.jpg",
       "/systeme.jpg",
     ],
+    shortDescription:
+      "Bénéficiez d'une solution sur mesure, pour votre site web, application, plugins, automatisation ou tout autre besoin.",
+    texts: {
+      first: {
+        cards: [
+          {
+            title: "Un développement selon vos besoins",
+            picto: "/icons/prestations/development.svg",
+            description:
+              "Pour répondre à vos problématiques les plus spécifiques.",
+          },
+          {
+            title: "Des solutions évolutives",
+            picto: "/icons/prestations/evolution.svg",
+            description: "Pour accompagner la croissance de votre activité.",
+          },
+          {
+            title: "Un accompagnement personnalisé",
+            picto: "/icons/prestations/support.svg",
+            description:
+              "Pour vous aider à faire les bons choix et à anticiper les évolutions.",
+          },
+          {
+            title: "De l'optimisation et du SEO",
+            picto: "/icons/prestations/seo.svg",
+            description:
+              "Pour un référencement naturel et une utilisation optimal.",
+          },
+        ],
+      },
+    },
   },
 ];
 
