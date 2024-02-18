@@ -6,7 +6,25 @@ import { ServiceType } from "@/data/services";
 import Link from "next/link";
 import { networks } from "@/data/networks";
 
+import { useRef, useEffect, useState } from "react";
+import { gsap } from "gsap";
+
 export default function TwoLayout(service: ServiceType) {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  useEffect(() => {
+    const caches = document.querySelectorAll(".element-cache");
+
+    if (imageLoaded) {
+      gsap.to(caches, {
+        duration: 0.5,
+        width: 0,
+        stagger: 0.2,
+        ease: "power2.inOut",
+      });
+    }
+  }, [imageLoaded]);
+
   return (
     <Section
       id="main"
@@ -23,7 +41,7 @@ export default function TwoLayout(service: ServiceType) {
         lg:py-40 lg:pb-10
         "
     >
-      <div className="left h-1/2 md:h-full w-full ">
+      <div className="left h-1/2 md:h-full w-full">
         <Image
           className="
               w-full h-full object-cover
@@ -34,7 +52,13 @@ export default function TwoLayout(service: ServiceType) {
           src="/evolution.jpg"
           width={1584}
           height={2376}
+          onLoad={() => setImageLoaded(true)}
         />
+        <div
+          className="element-cache
+            absolute top-0 left-0 w-full h-full bg-white z-10
+            "
+        ></div>
       </div>
 
       <div className="right flex flex-col md:h-full justify-center gap-2 md:gap-8">

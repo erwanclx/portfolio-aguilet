@@ -24,7 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
   TextReveal();
   return (
     <>
-      <Preloader />
+      {/* <Preloader /> */}
       <SmoothScrolling>
         <div>
           <Header />
