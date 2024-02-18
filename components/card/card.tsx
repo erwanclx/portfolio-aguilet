@@ -8,6 +8,10 @@ interface CardProps {
   picto: string;
 }
 
+function isSvg(src: string) {
+  return src.endsWith(".svg");
+}
+
 export default function Card(props: CardProps) {
   useEffect(() => {
     document.documentElement.style.setProperty("--rotation", "0deg");
