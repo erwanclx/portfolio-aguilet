@@ -134,8 +134,11 @@ export default function Header() {
   }, [isSubMenuOpen, test]);
 
   return (
-    <header ref={SubmenuRef}>
-      <nav>
+    <header ref={SubmenuRef} className="">
+      <nav
+        className="fixed top-0 w-full bg-white z-50
+      "
+      >
         <ul
           className="w-full h-12 px-4 flex items-center justify-between absolute z-50 bg-white
                 md:min-h-fit md:h-fit md:px-10
