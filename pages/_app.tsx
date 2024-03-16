@@ -7,6 +7,7 @@ import Footer from "@/components/navigation/footer/footer";
 
 import SmoothScrolling from "@/components/animations/scrolling";
 import { TextReveal } from "@/components/animations/text_reveal";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // export default function App({ Component, pageProps }: AppProps) {
 //   return (
@@ -29,6 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <div>
           <Header />
           <Component {...pageProps} />
+          <SpeedInsights />
           <Footer />
         </div>
       </SmoothScrolling>
