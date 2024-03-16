@@ -3,21 +3,17 @@ import Link from "next/link";
 import { ChevronBottom } from "../navigation/header/chevron";
 import { PrimaryLink, SecondaryLink } from "../button/button";
 import { useEffect } from "react";
+import gsap from "gsap";
 
 export default function Hero() {
   useEffect(() => {
-    const loadGSAP = async () => {
-      const { gsap } = await import("gsap");
-      gsap.to(".hero_cta", {
-        duration: 0.7,
-        y: 10,
-        repeat: -1,
-        yoyo: true,
-        ease: "power1.inOut",
-      });
-    };
-
-    loadGSAP();
+    gsap.to(".hero_cta", {
+      duration: 0.7,
+      y: 10,
+      repeat: -1,
+      yoyo: true,
+      ease: "power1.inOut",
+    });
   }, []);
 
   return (
