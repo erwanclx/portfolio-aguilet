@@ -61,6 +61,8 @@ export default function Document() {
         />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="#3b82f6" />
+
+        <title>Arthur Guilet - Freelance</title>
       </Head>
       <body>
         <Main />
