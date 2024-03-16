@@ -3,21 +3,25 @@ import Link from "next/link";
 import { ChevronBottom } from "../navigation/header/chevron";
 import { PrimaryLink, SecondaryLink } from "../button/button";
 import { useEffect } from "react";
-import gsap from "gsap";
 
 export default function Hero() {
   useEffect(() => {
-    gsap.to(".hero_cta", {
-      duration: 0.7,
-      y: 10,
-      repeat: -1,
-      yoyo: true,
-      ease: "power1.inOut",
-    });
+    const loadGSAP = async () => {
+      const { gsap } = await import("gsap");
+      gsap.to(".hero_cta", {
+        duration: 0.7,
+        y: 10,
+        repeat: -1,
+        yoyo: true,
+        ease: "power1.inOut",
+      });
+    };
+
+    loadGSAP();
   }, []);
 
   return (
-    <section id="hero" className="w-full bg-cover -z-10 relative">
+    <section id="hero" className="w-full bg-cover relative">
       <Image
         src="/hero.jpg"
         alt="Hero background image"
