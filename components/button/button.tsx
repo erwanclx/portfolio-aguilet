@@ -118,6 +118,7 @@ function SecondaryLink(props: any) {
   return (
     <Link
       href={props.href}
+      target={props.target ? props.target : ""}
       className={
         "bg-white w-fit py-3 px-7 text-black font-bold relative transition duration-300 hover:bg-[#1a3c73] hover:text-white" +
         (props.className ? props.className : "")

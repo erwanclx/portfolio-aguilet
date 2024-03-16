@@ -2,7 +2,7 @@ export const services_links = [
   {
     name: "Infogérance",
     link: "/prestations/infogerance",
-    image: "/systeme.jpg",
+    image: "/banners/accompagnement.jpg",
     subImages: [
       "/systeme.jpg",
       "/systeme.jpg",
@@ -49,7 +49,7 @@ export const services_links = [
   {
     name: "Création et audit de votre infrastructure",
     link: "/prestations/creation-et-audit-de-votre-infrastructure",
-    image: "/systeme.jpg",
+    image: "/banners/audit.jpg",
     subImages: [
       "/systeme.jpg",
       "/systeme.jpg",
@@ -91,14 +91,14 @@ export const services_links = [
       second: {
         title: "Un accompagnement personnalisé",
         content:
-          "Je vous accompagne dans la création, la mise en place et l'audit de votre infrastructure informatique. La communication étant le point clé de toute bonne collaboration, des COTECHS et COPILS réguliers sont mis en place afin de vous tenir informé de l'état de votre infrastructure et des actions menées, tout en échangeant sur les évolutions à venir.",
+          "Je vous accompagne dans la création, la mise en place et l'audit de votre infrastructure informatique. Le budget et les besoins de votre entreprise sont pris en compte pour vous proposer une solution adaptée et évolutive, garantissant une performance et une sécurité optimales.",
       },
     },
   },
   {
     name: "Développement sur mesure",
     link: "/prestations/developpement-sur-mesure",
-    image: "/systeme.jpg",
+    image: "/banners/dev.jpg",
     subImages: [
       "/systeme.jpg",
       "/systeme.jpg",

@@ -38,3 +38,6 @@ next-env.d.ts
 
 # Dev Files
 evaluations.json
+
+# Build Files
+Thumbs.db

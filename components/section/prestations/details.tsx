@@ -86,7 +86,7 @@ export default function Details(service: ServiceType) {
     "
         id="more-variant"
       >
-        <div className="flex flex-col gap-6 md:gap-0 md:flex-row z-10">
+        {/* <div className="flex flex-col gap-6 md:gap-0 md:flex-row z-10">
           <p
             className="text-justify md:w-1/2 reveal-type-by-opacity text-white
         "
@@ -100,6 +100,40 @@ export default function Details(service: ServiceType) {
           >
             {service.service.texts.second.title}
           </Title>
+        </div> */}
+
+        <div
+          className="flex justify-evenly 
+        flex-col-reverse md:flex-row
+        items-start
+        h-1/2 w-full
+        gap-12 z-10"
+        >
+          <div className="flex flex-col-reverse w-full gap-6 md:gap-2 z-10">
+            <p
+              className="text-justify reveal-type-by-opacity text-white
+        "
+            >
+              {service.service.texts.second.content}
+            </p>
+
+            <Title
+              type="h2"
+              className="perspective-left text-end  text-white presta-titles"
+            >
+              {service.service.texts.second.title}
+            </Title>
+          </div>
+
+          <div className="w-full h-full">
+            <Image
+              src={service.service.image}
+              alt={service.service.name}
+              width={1584}
+              height={2376}
+              className="h-full w-full object-cover rounded-3xl grayscale"
+            />
+          </div>
         </div>
 
         <SecondaryLink href="/contact" className=" self-center z-20">
