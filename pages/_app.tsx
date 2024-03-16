@@ -5,7 +5,7 @@ import Preloader from "@/components/animations/preloader";
 import Header from "@/components/navigation/header/header";
 import Footer from "@/components/navigation/footer/footer";
 
-import SmoothScrolling from "@/components/animations/scrolling";
+// import SmoothScrolling from "@/components/animations/scrolling";
 import { TextReveal } from "@/components/animations/text_reveal";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -26,14 +26,14 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       {/* <Preloader /> */}
-      <SmoothScrolling>
-        <div>
-          <Header />
-          <Component {...pageProps} />
-          <SpeedInsights />
-          <Footer />
-        </div>
-      </SmoothScrolling>
+      {/* <SmoothScrolling> */}
+      <div>
+        <Header />
+        <Component {...pageProps} />
+        <SpeedInsights />
+        <Footer />
+      </div>
+      {/* </SmoothScrolling> */}
     </>
   );
 }
