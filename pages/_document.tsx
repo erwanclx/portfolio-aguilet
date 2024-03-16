@@ -11,7 +11,7 @@ export default function Document() {
         />
         <meta
           name="keywords"
-          content="freelance, admin, système, réseau, développement, web, mobile, arthur, guilet, arthur guilet, achères, informatique, prestataire, service"
+          content="freelance, admin, système, réseau, développement, web, mobile, arthur, guilet, arthur guilet, achères, informatique, prestataire, service, portfolio, portfolio freelance, portfolio arthur guilet, portfolio arthur, portfolio guilet, portfolio achères, portfolio informatique, portfolio prestataire, portfolio service"
         />
         <meta name="author" content="Arthur Guilet" />
         <link rel="icon" href="/logo.png" />
