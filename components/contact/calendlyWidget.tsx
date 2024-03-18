@@ -1,32 +1,32 @@
 import React, { useEffect } from "react";
-// import Script from "next/script";
+import Script from "next/script";
 
 export default function CalendlyWidget() {
-  useEffect(() => {
-    // Load Calendly script
-    const script = document.createElement("script");
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
-    script.async = true;
-    script.defer = true;
+  // useEffect(() => {
+  //   // Load Calendly script
+  //   const script = document.createElement("script");
+  //   script.src = "https://assets.calendly.com/assets/external/widget.js";
+  //   script.async = true;
+  //   script.defer = true;
 
-    const entry = document.getElementsByTagName("script")[0];
-    if (entry.parentNode) {
-      entry.parentNode.insertBefore(script, entry);
-    }
+  //   const entry = document.getElementsByTagName("script")[0];
+  //   if (entry.parentNode) {
+  //     entry.parentNode.insertBefore(script, entry);
+  //   }
 
-    return () => {
-      if (script.parentNode) {
-        script.parentNode.removeChild(script);
-      }
-    };
-  }, []);
+  //   return () => {
+  //     if (script.parentNode) {
+  //       script.parentNode.removeChild(script);
+  //     }
+  //   };
+  // }, []);
 
   return (
     <>
-      {/* <Script
+      <Script
         src="https://assets.calendly.com/assets/external/widget.js"
         strategy="afterInteractive"
-      /> */}
+      />
       <div
         className="calendly-inline-widget"
         data-url="https://calendly.com/aguilet/premiere-prise-de-contact"
