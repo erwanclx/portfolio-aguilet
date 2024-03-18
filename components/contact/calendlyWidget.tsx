@@ -1,52 +1,56 @@
 import React, { useEffect } from "react";
+// import Script from "next/script";
 
 export default function CalendlyWidget() {
+  useEffect(() => {
+    // Load Calendly script
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    script.defer = true;
 
-    useEffect(() => {
-        // Load Calendly script
-        const script = document.createElement('script');
-        script.src = 'https://assets.calendly.com/assets/external/widget.js';
-        script.async = true;
+    const entry = document.getElementsByTagName("script")[0];
+    if (entry.parentNode) {
+      entry.parentNode.insertBefore(script, entry);
+    }
 
-        const entry = document.getElementsByTagName('script')[0];
-        if (entry.parentNode) {
-            entry.parentNode.insertBefore(script, entry);
+    return () => {
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
+    };
+  }, []);
+
+  return (
+    <>
+      {/* <Script
+        src="https://assets.calendly.com/assets/external/widget.js"
+        strategy="afterInteractive"
+      /> */}
+      <div
+        className="calendly-inline-widget"
+        data-url="https://calendly.com/aguilet/premiere-prise-de-contact"
+      ></div>
+
+      <style jsx>{`
+        .calendly-inline-widget {
+          width: 100%;
+          min-height: 700px;
+          height: 100%;
         }
 
-        return () => {
-            if (script.parentNode) {
-                script.parentNode.removeChild(script);
-            }
-        };
+        @media (max-width: 1760px) {
+          .calendly-inline-widget {
+            height: 1100px;
+          }
+        }
 
-    }, []);
-
-    return (
-        <>
-            <div className="calendly-inline-widget" data-url="https://calendly.com/aguilet/premiere-prise-de-contact"></div>
-        
-            <style jsx>{`        
-                      
-                      .calendly-inline-widget {
-                        width: 100%;
-                        min-height: 700px;
-                        height: 100%;
-                      }
-
-                      @media (max-width: 1760px) {
-                        .calendly-inline-widget {
-                          height: 1100px;
-                        }
-                      }
-
-                      
-                      @media (min-width: 1261px) {
-                        .calendly-inline-widget {
-                          height: 700px;
-                        }
-                      }
-
-            `}</style>
-        </>
-    )
+        @media (min-width: 1261px) {
+          .calendly-inline-widget {
+            height: 700px;
+          }
+        }
+      `}</style>
+    </>
+  );
 }
