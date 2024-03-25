@@ -66,7 +66,8 @@ export const services_links = [
             title: "Une infrastructure sur mesure",
             picto: "/icons/prestations/infrastructure.svg",
             description:
-              "Conçue pour répondre à vos besoins et à votre budget.",
+              // "Conçue pour répondre à vos besoins et à votre budget.",
+              "Que ce soit on-premise, dans le cloud ou hybride, je vous propose une solution adaptée à vos besoins et à votre budget.",
           },
           {
             title: "Des solutions sécurisées",
