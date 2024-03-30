@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://portfolio.arthur-guilet.fr
+Host: https://arthur-guilet.fr
 
 # Sitemaps
-Sitemap: https://portfolio.arthur-guilet.fr/sitemap.xml
+Sitemap: https://arthur-guilet.fr/sitemap.xml

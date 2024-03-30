@@ -1,5 +1,5 @@
 const config = {
-  siteUrl: "https://portfolio.arthur-guilet.fr",
+  siteUrl: "https://arthur-guilet.fr",
   generateRobotsTxt: true,
 };
 

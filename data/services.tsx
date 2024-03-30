@@ -19,23 +19,28 @@ export const services_links = [
             title: "Une supervision complète",
             picto: "/icons/prestations/monitoring.svg",
             description:
-              "Des métriques en temps réel mis en place pour une réactivité optimale.",
+              // "Des métriques en temps réel mis en place pour une réactivité optimale.",
+              "Une surveillance proactive et détaillée de votre infrastructure informatique, pour une réactivité optimale et une disponibilité maximale.",
           },
           {
             title: "Des sauvegardes externalisées",
             picto: "/icons/prestations/backup.svg",
             description:
-              "Dans de multiples destinations respectueuses du RGPD.",
+              // "Dans de multiples destinations respectueuses du RGPD.",
+              "Même dans les situations les plus critiques, vos données sont protégées et récupérables dans de multiples destinations respectueuses du RGPD.",
           },
           {
-            title: "Une assistance illimitée",
+            title: "Une assistance selon vos besoins",
             picto: "/icons/prestations/support.svg",
-            description: "Pour une tranquillité d'esprit totale.",
+            // description: "Pour une tranquillité d'esprit totale.",
+            description:
+              "Pour une tranquillité d'esprit totale, je vous propose un support réactif et personnalisé, adapté à vos besoins et à votre budget.",
           },
           {
             title: "Un support réactif",
             picto: "/icons/prestations/bolt.svg",
-            description: "Pour que votre activité ne soit jamais impactée.",
+            description:
+              "Pour que votre activité ne soit jamais impactée, un support réactif est mis en place pour répondre à vos besoins en temps réel.",
           },
         ],
       },
@@ -66,26 +71,25 @@ export const services_links = [
             title: "Une infrastructure sur mesure",
             picto: "/icons/prestations/infrastructure.svg",
             description:
-              // "Conçue pour répondre à vos besoins et à votre budget.",
-              "Que ce soit on-premise, dans le cloud ou hybride, je vous propose une solution adaptée à vos besoins et à votre budget.",
+              "Cloud, on-premise, hybride, je vous offre des solutions informatiques taillées sur mesure, conçues pour répondre précisément à vos besoins et à ceux de votre entreprise.",
           },
           {
             title: "Des solutions sécurisées",
             picto: "/icons/prestations/security.svg",
             description:
-              "Pour protéger vos données et garantir la confidentialité de vos échanges.",
+              "Pour protéger vos données et garantir la confidentialité de vos échanges, je vous propose des solutions de sécurité adaptées à votre activité tout en vous permettant une adapatabilité et une évolutivité optimale.",
           },
           {
             title: "Des outils collaboratifs",
             picto: "/icons/prestations/collaboration.svg",
             description:
-              "Pour faciliter le travail en équipe et l'échange de données.",
+              "Pour faciliter le travail en équipe et l'échange de données, des outils collaboratifs sont mis en place pour une communication optimale et une productivité accrue.",
           },
           {
-            title: "Un accompagnement personnalisé",
+            title: "Des solutions évolutives",
             picto: "/icons/prestations/support.svg",
             description:
-              "Pour vous aider à faire les bons choix et à anticiper les évolutions.",
+              "En constante évolution, votre infrastructure informatique est conçue pour s'adapter à vos besoins et à ceux de votre entreprise. Scalabilité, performance et sécurité sont les maîtres mots.",
           },
         ],
       },
@@ -116,24 +120,27 @@ export const services_links = [
             title: "Un développement selon vos besoins",
             picto: "/icons/prestations/development.svg",
             description:
-              "Pour répondre à vos problématiques les plus spécifiques.",
+              // "Pour répondre à vos problématiques les plus spécifiques.",
+              "Pour répondre à vos problématiques les plus spécifiques, je vous propose des solutions sur mesure, adaptées à vos besoins et à ceux de votre entreprise.",
           },
           {
             title: "Des solutions évolutives",
             picto: "/icons/prestations/evolution.svg",
-            description: "Pour accompagner la croissance de votre activité.",
+            // description: "Pour accompagner la croissance de votre activité.",
+            description:
+              "Pour accompagner la croissance de votre activité, vos solutions sont conçues pour être évolutives et rapidement déployables.",
           },
           {
             title: "Un accompagnement personnalisé",
             picto: "/icons/prestations/support.svg",
             description:
-              "Pour vous aider à faire les bons choix et à anticiper les évolutions.",
+              "Une simple idée ? Je vous offre ma réflexion et mon expertise pour la concrétiser, en vous accompagnant dans le processus de recherche et de développement de votre solution.",
           },
           {
             title: "De l'optimisation et du SEO",
             picto: "/icons/prestations/seo.svg",
             description:
-              "Pour un référencement naturel et une utilisation optimal.",
+              "Rapidité, performance, référencement, je vous propose des solutions optimisées,",
           },
         ],
       },

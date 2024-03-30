@@ -24,7 +24,8 @@ export default function Hero() {
         layout="fill"
         objectFit="cover"
       />
-      <div className="ToAnimateClass w-full h-full pt-12 md:pt-24 relative">
+      {/* <div className="ToAnimateClass w-full h-full pt-12 md:pt-24 relative"> */}
+      <div className="ToAnimateClass w-full h-full flex items-end pb-2 relative">
         <div className="w-full flex flex-col gap-8 absolute left-0 top-2/3 top-[60%] md:max-w-[60%] pl-4 md:pl-10">
           <h1 className="text-white text-4xl md:text-7xl font-extrabold">
             VOS PROJETS CONCRÉTISÉS EN TOUTE SÉRÉNITÉ.
