@@ -24,9 +24,9 @@ export const networks = [
     link: "mailto:contact@arthur-guilet.fr?subject=Prise%20de%20contact%20pour%20un%20projet&body=Bonjour%20Arthur%2C%0A%0AJ%27ai%20un%20projet%20dont%20je%20souhaiterais%20discuter%20avec%20toi%20%3A%0A%0A%0A%0A%0A%0A%0A%0A%0A",
     icon: "/icons/mail.svg",
   },
-  {
-    name: "Téléphone",
-    link: "tel:+336 52 52 52 52",
-    icon: "/icons/phone.svg",
-  },
+  // {
+  //   name: "Téléphone",
+  //   link: "tel:+336 52 52 52 52",
+  //   icon: "/icons/phone.svg",
+  // },
 ];
