@@ -58,9 +58,7 @@ export default function TwoLayout() {
           className="element-cache
               absolute top-0 left-0 w-full h-full bg-white
               "
-        >
-          D
-        </div>
+        ></div>
       </div>
 
       <div className="right h-1/2 md:h-auto relative ">
